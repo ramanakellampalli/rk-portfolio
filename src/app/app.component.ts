@@ -51,7 +51,9 @@ export class AppComponent implements OnInit {
       'assets/skill-images/9.jpg',
       'assets/skill-images/10.jpg',
       'assets/skill-images/11.jpg',
-      'assets/skill-images/12.jpg'
+      'assets/skill-images/12.jpg',
+      'assets/education/ms.jpg',
+      'assets/education/btech.jpg'
     ];
 
     return of(imageUrls);
