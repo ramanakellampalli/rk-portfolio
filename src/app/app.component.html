@@ -1,0 +1,132 @@
+<div class="header">
+  <div class="particles">
+    <!-- Particles will be generated here -->
+  </div>
+  <div class="profile-picture">
+    <img src="assets/IMG_9796.jpg" alt="Your Name" />
+  </div>
+  <div class="header-content">
+    <h4 class="header-title">Welcome to My Portfolio</h4>
+    <p>
+      Hello, I'm <strong><i>Ramana Kellampalli</i></strong
+      >, a <strong><i>Distinguished Engineer</i></strong
+      >.
+    </p>
+  </div>
+  <div class="contact-info">
+    <a href="mailto:ramana.csu@gmail.com" class="contact-link">
+      <i class="far fa-envelope"></i>
+      <span>Email</span>
+    </a>
+    <a
+      href="https://www.linkedin.com/in/ramana-k-74913a259/"
+      class="contact-link"
+    >
+      <i class="fab fa-linkedin"></i>
+      <span>LinkedIn</span>
+    </a>
+    <a href="https://twitter.com/ramana" class="contact-link">
+      <i class="fab fa-twitter"></i>
+      <span>Twitter</span>
+    </a>
+    <a href="#" class="contact-link">
+      <i class="fas fa-phone"></i>
+      <span>(312) 203‑3578</span>
+    </a>
+  </div>
+</div>
+
+<!-- YourComponent.component.html -->
+<div class="tabs">
+  <div
+    class="tab"
+    [class.active]="activeTab === 'about'"
+    (click)="changeTab('about')"
+  >
+    About
+  </div>
+  <div
+    class="tab"
+    [class.active]="activeTab === 'skills'"
+    (click)="changeTab('skills')"
+  >
+    Skills
+  </div>
+  <div
+    class="tab"
+    [class.active]="activeTab === 'achievements'"
+    (click)="changeTab('achievements')"
+  >
+    Achievements
+  </div>
+  <div
+    class="tab"
+    [class.active]="activeTab === 'education'"
+    (click)="changeTab('education')"
+  >
+    Education
+  </div>
+  <div
+    class="tab"
+    [class.active]="activeTab === 'experience'"
+    (click)="changeTab('experience')"
+  >
+    Experience
+  </div>
+</div>
+
+<div class="tab-content">
+  <div class="content active" *ngIf="activeTab === 'about'">
+    <div class="content-left">
+      <!-- Left side image goes here -->
+      <img src="assets/about-me.jpeg" alt="Your Name" />
+    </div>
+    <div class="content-right">
+      <!-- Right side content goes here -->
+      <h4>The Story Behind the Profile</h4>
+      <p>
+        <i>
+          I am a seasoned Solution Architect with a passion for leveraging
+          technology to drive business growth and enable digital transformation.
+          With a strong background in designing and implementing scalable
+          solutions, I specialize in bridging the gap between business
+          objectives and technical requirements. Develop architecture
+          deliverables required on strategic projects, including conceptual
+          architectures, current, future state architectures, and transition
+          planning methods.
+        </i>
+      </p>
+    </div>
+  </div>
+  <div class="content image-container" *ngIf="activeTab === 'skills'">
+    <img *ngFor="let imageUrl of imageUrls" [src]="imageUrl" alt="Image" />
+  </div>
+  <div class="content" *ngIf="activeTab === 'achievements'">
+    Achievements content goes here.
+  </div>
+  <div class="content edu-content" *ngIf="activeTab === 'education'">
+    <div class="callout-info">
+      <div class="callout-image">
+        <img src="../assets/education/ms.jpg" alt="Master's Degree" />
+      </div>
+      <div class="callout-content">
+        <h4>Master's Degree in Computer Science</h4>
+        <p>Chicago State University</p>
+        <p>Chicago, IL</p>
+      </div>
+    </div>
+    <div class="callout-info">
+      <div class="callout-image">
+        <img src="../assets/education/btech.jpg" alt="Bachelor's Degree" />
+      </div>
+      <div class="callout-content">
+        <h4>Bachelor's Degree in Information Technology</h4>
+        <p>Jawaharlal Nehru Technological University</p>
+        <p>Kakinada, IL</p>
+      </div>
+    </div>
+  </div>  
+  <div class="content" *ngIf="activeTab === 'experience'">
+    Experience content goes here.
+  </div>
+</div>
