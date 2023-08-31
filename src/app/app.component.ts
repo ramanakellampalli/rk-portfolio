@@ -21,6 +21,7 @@ import { Observable, of } from 'rxjs';
 export class AppComponent implements OnInit {
   title = 'rk-portfolio';
   imageUrls: string[] = [];
+  educationImgs: string[] = [];
 
   activeTab: string = 'about'; // Initial active tab
 
@@ -35,6 +36,10 @@ export class AppComponent implements OnInit {
     this.getImageUrls().subscribe((urls) => {
       this.imageUrls = urls;
     });
+    this.educationImgs = [
+      'assets/education/ms.jpg',
+      'assets/education/btech.jpg'
+    ];
   }
 
   getImageUrls(): Observable<string[]> {
@@ -51,9 +56,7 @@ export class AppComponent implements OnInit {
       'assets/skill-images/9.jpg',
       'assets/skill-images/10.jpg',
       'assets/skill-images/11.jpg',
-      'assets/skill-images/12.jpg',
-      'assets/education/ms.jpg',
-      'assets/education/btech.jpg'
+      'assets/skill-images/12.jpg'
     ];
 
     return of(imageUrls);
