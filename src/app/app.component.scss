@@ -1,0 +1,293 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background: linear-gradient(to right, #4d79ff, #66ccff);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.particles {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.particles::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/sa.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  animation: particlesAnimation 20s linear infinite;
+}
+
+.profile-picture {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: zoomIn 1s forwards;
+  animation-delay: 0.5s;
+}
+
+.profile-picture img {
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.header:hover .profile-picture {
+  animation: none;
+  transform: scale(1.05);
+}
+
+@keyframes particlesAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+  background-color: #f4f4f4;
+}
+
+.skill {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+}
+
+.skill img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.about {
+  padding: 40px;
+  background-color: #fff;
+  text-align: center;
+}
+
+/* Your existing CSS styles here */
+
+.contact-info {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end; /* Align items to the right */
+  height: 100%;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  margin: 10px;
+  transition: transform 0.2s, opacity 0.2s;
+  text-decoration: none;
+}
+
+.contact-link i {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.contact-link span {
+  transition: color 0.2s;
+}
+
+.contact-link:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.contact-link:hover span {
+  color: #66ccff; /* Color change on hover */
+}
+
+/* Tab styles */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #777;
+  transition: color 0.3s;
+}
+
+.tab.active {
+  color: #66ccff;
+  border-bottom: 2px solid #66ccff;
+}
+
+/* Tab content styles */
+.tab-content {
+  margin-top: 20px;
+}
+
+.content.active {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Align both sections in the center */
+}
+
+.content-left img {
+  max-width: 100%;
+  max-height: 400px; /* Adjust the maximum height as needed */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.content-right {
+  flex: 1;
+  max-width: 600px; /* Limit the maximum width of the content */
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-left: 20px; /* Add some space between the sections */
+}
+
+/* Additional styling for the active tab */
+.content.active h3 {
+  margin-bottom: 10px;
+}
+
+.content.active p {
+  color: #777;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Hover effects */
+.content-left img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.content-right:hover {
+  background-color: #f4f4f4;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.content-right p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+  margin-top: 20px;
+}
+
+/* image-gallery.component.css */
+.image-container {
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 200px; /* Adjust this to your preferred width */
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+  width: 200px; /* Adjust this to your preferred width */
+  height: auto;
+  /* ... rest of the styles ... */
+}
+
+/* Define the callout-info class */
+.callout-info {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 4px solid #66ccff;
+  background-color: #f0f9ff;
+}
+
+.callout-image {
+  flex: 0 0 100px; /* Adjust the width of the image column */
+  margin-right: 15px; /* Space between image and content */
+}
+
+.callout-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.callout-content {
+  flex: 1;
+}
+
+/* Your other existing styles */
